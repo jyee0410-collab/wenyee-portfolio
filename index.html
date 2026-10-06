@@ -253,7 +253,7 @@ body.intro-lock{overflow:hidden}
 .wall::after{right:0;top:48%}
 .desk{position:absolute;left:-100vw;right:-100vw;top:60%;height:40%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.7) 22%,rgba(255,250,252,.5) 55%,transparent)}
 .orbit{position:absolute;left:2%;top:21%;width:94%;height:44%;border-radius:50%;border:2px solid rgba(255,255,255,.9);box-shadow:0 0 14px rgba(255,150,200,.55),inset 0 0 14px rgba(255,150,200,.4);transform:rotate(-7deg);pointer-events:none;opacity:.8}
-#scene{container-type:inline-size;position:relative;width:min(1100px,96vw);aspect-ratio:16/9;transform-origin:50% 43%;transition:transform 1.1s cubic-bezier(.65,0,.25,1) .25s}
+#scene{container-type:inline-size;--W:min(120vw,calc((100vh - 200px) / .64 * 16 / 9));--W:min(120vw,calc((100dvh - 200px) / .64 * 16 / 9));position:absolute;left:50%;translate:-50% 0;top:calc((100vh - var(--W) * .36 - 180px) / 2 - var(--W) * .045);top:calc((100dvh - var(--W) * .36 - 180px) / 2 - var(--W) * .045);width:var(--W);aspect-ratio:16/9;transform-origin:50% 43%;transition:transform 1.1s cubic-bezier(.65,0,.25,1) .25s}
 #intro.on.zoom .burst,#intro.on.zoom .word,#intro.on.zoom .tag,#intro.on.zoom .prop,#intro.on.zoom .orbit,#intro.on.zoom .skip{opacity:0;transition:opacity .35s}
 .disp .paper{position:absolute;inset:0;background:#fcfbfc;background-image:radial-gradient(#ecdfe5 1px,transparent 1.2px);background-size:3px 3px;opacity:0;transition:opacity .45s}
 .disp .paper b{position:absolute;left:4%;top:5%;font:900 11px/1 var(--disp);color:var(--rose);letter-spacing:.01em;font-size:clamp(5px,.6vw,9px)}
@@ -297,7 +297,7 @@ body.intro-lock{overflow:hidden}
 .caps{width:6.4%;aspect-ratio:1/2.3;left:29%;top:8%;border-radius:999px;background:linear-gradient(90deg,#ffb35c,#ff7a1a 45%,#ffd49a 70%,#ff8a2a);filter:drop-shadow(0 10px 14px rgba(255,120,30,.4))}
 .ball{width:3.2%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 8%,var(--c) 40%,var(--c2) 100%);filter:drop-shadow(0 8px 10px rgba(110,30,80,.18))}
 .ball.soft{opacity:.85;filter:blur(.5px)}
-.cross{width:4.6%;aspect-ratio:1;left:62.8%;top:54%}
+.cross{width:4.6%;aspect-ratio:1;left:60.6%;top:54%}
 .cross::before,.cross::after{content:"";position:absolute;left:36%;top:0;width:28%;height:100%;border-radius:999px;background:linear-gradient(90deg,#ff9fc4,#ffe3ee 45%,#ffb6d1 60%,#f06c9f);transform:rotate(45deg);box-shadow:0 6px 10px rgba(220,60,130,.3)}
 .cross::after{transform:rotate(-45deg)}
 .star{width:3.4%;aspect-ratio:1;background:linear-gradient(160deg,#fff0a8,#ffcf3d 55%,#f5a623);clip-path:polygon(50% 0,63% 34%,98% 36%,70% 58%,80% 95%,50% 74%,20% 95%,30% 58%,2% 36%,37% 34%)}
@@ -308,7 +308,7 @@ body.intro-lock{overflow:hidden}
 .marks{width:3%;height:2.4%;left:21.7%;top:15.6%}
 .marks::before,.marks::after,.marks i{content:"";position:absolute;bottom:0;width:16%;height:100%;border-radius:4px;background:#ff8a1f}
 .marks::before{left:6%;transform:rotate(-30deg)}.marks i{left:42%;display:block}.marks::after{right:6%;transform:rotate(30deg)}
-.squig{width:5.2%;left:34.8%;top:32%}
+.squig{width:5.2%;left:34.8%;top:34%}
 .squig svg{display:block;width:100%;overflow:visible}
 /* word */
 .word{isolation:isolate;pointer-events:none;position:absolute;left:50%;top:43%;translate:-50% -50%;display:flex;font:700 10.6cqw/1 "Fredoka","Archivo",sans-serif;letter-spacing:.005em;filter:drop-shadow(0 0 22px rgba(255,90,150,.35))}
@@ -324,19 +324,19 @@ body.intro-lock{overflow:hidden}
 @keyframes wob{50%{translate:0 -6px}}
 .tag{pointer-events:none;position:absolute;left:50%;top:72%;translate:-50% 0;text-align:center;opacity:0;transition:opacity .6s 1.3s;white-space:nowrap}
 #intro.on .tag{opacity:1}
-.tag b{display:block;margin-top:4px;font:900 clamp(20px,3cqw,36px)/1.2 var(--cn);color:var(--ink)}
-.tag small{display:flex;align-items:center;justify-content:center;gap:12px;font:700 clamp(12px,1.25cqw,16px)/1.6 var(--disp);letter-spacing:.2em;color:#e0457f}
+.tag b{display:block;margin-top:4px;font:900 clamp(19px,2.7vw,30px)/1.2 var(--cn);color:var(--ink)}
+.tag small{display:flex;align-items:center;justify-content:center;gap:12px;font:700 clamp(12px,1.15vw,13px)/1.6 var(--disp);letter-spacing:.2em;color:#e0457f}
 .tag small::before,.tag small::after{content:"";width:40px;height:1px;background:linear-gradient(90deg,transparent,#f1a3c2)}
 .tag small::after{transform:scaleX(-1)}
-.enter{margin-top:14px;border:0;background:linear-gradient(90deg,#ff4f93,#ff7fae 60%,#ff9ab8);color:#fff;font:700 clamp(14px,1.6cqw,19px)/1 var(--cn);padding:.95em 2.6em;border-radius:999px;cursor:pointer;pointer-events:none;box-shadow:0 10px 24px -6px rgba(255,70,140,.55),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .2s,box-shadow .2s}
+.enter{margin-top:14px;border:0;background:linear-gradient(90deg,#ff4f93,#ff7fae 60%,#ff9ab8);color:#fff;font:700 clamp(14px,1.45vw,16px)/1 var(--cn);padding:.95em 2.6em;border-radius:999px;cursor:pointer;pointer-events:none;box-shadow:0 10px 24px -6px rgba(255,70,140,.55),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .2s,box-shadow .2s}
 #intro.on .enter{pointer-events:auto}
 .enter:hover{transform:translateY(-2px);box-shadow:0 14px 28px -6px rgba(255,70,140,.65),inset 0 1px 0 rgba(255,255,255,.5)}
 .skip{position:absolute;right:16px;top:calc(14px + env(safe-area-inset-top,0px));z-index:5;border:1px solid rgba(0,0,0,.15);background:rgba(255,255,255,.85);border-radius:999px;padding:8px 14px;font:700 12px/1 var(--cn);cursor:pointer}
 .ihint{position:absolute;left:50%;bottom:6%;translate:-50% 0;font:700 13px/1 var(--cn);color:var(--ink2);transition:opacity .3s}
 #intro.on .ihint{opacity:0}
 @media (max-width:760px){
-  #scene{width:150vw;margin-inline:-25vw}
-  .ptoon,.planet,.star.pk,.wall::before,.wall::after{display:none}
+  #scene{position:relative;left:auto;top:auto;translate:none;width:150vw;margin-inline:-25vw}
+  .ptoon,.planet,.wall::before,.wall::after{display:none}
   .orbit{left:14%;width:72%}
   .tag{top:72%}
 }
@@ -636,7 +636,6 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
 
 /* fit: only shrink when the screen is too small; normal screens unchanged */
 @media (max-height:700px) and (min-width:761px){
-  #scene{width:min(1100px,96vw,calc((100vh - 60px) * 16 / 9))!important;width:min(1100px,96vw,calc((100dvh - 60px) * 16 / 9))!important}
 }
 @media (min-width:761px) and (max-width:1199px){
   .hello .hin{width:1180px!important;max-width:none!important;zoom:var(--hz,1)}
@@ -741,7 +740,7 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
       <div class="shape torus" style="--sx:-120px;--sy:170px;--dl:.3s;--rot:20deg"></div>
       <div class="shape cross" style="--sx:-60px;--sy:-60px;--dl:.55s"></div>
       <div class="shape ball" style="left:40%;top:15%;--c:#5ab0ff;--c2:#1d5fd1;--sx:100px;--sy:150px;--dl:.35s;width:3%"></div>
-      <div class="shape ball" style="left:68.6%;top:56%;--c:#5fe08e;--c2:#18a052;--sx:-140px;--sy:-40px;--dl:.5s;width:3.6%"></div>
+      <div class="shape ball" style="left:68.6%;top:58.5%;--c:#ffe28a;--c2:#f5a91f;--sx:-140px;--sy:-40px;--dl:.5s;width:3.6%"></div>
       <div class="shape ball" style="left:38.2%;top:55.6%;--c:#ffa3c2;--c2:#f0568f;--sx:120px;--sy:-20px;--dl:.6s;width:2.3%"></div>
       <div class="shape ball soft" style="left:13%;top:11%;--c:#e4ccff;--c2:#b48af5;--sx:160px;--sy:120px;--dl:.4s;width:3.4%"></div>
       <div class="shape ball soft" style="left:6.2%;top:35%;--c:#ffd3e6;--c2:#f27fb0;--sx:200px;--sy:20px;--dl:.45s;width:6%"></div>
@@ -751,7 +750,7 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
       <div class="shape star" style="left:83.4%;top:28%;--sx:-180px;--sy:60px;--dl:.7s;width:2.6%;--rot:10deg"></div>
       <div class="shape star" style="left:83.2%;top:56.5%;--sx:-180px;--sy:-40px;--dl:.75s;width:1.8%"></div>
       <div class="shape star pk" style="left:90.2%;top:62.5%;--sx:-220px;--sy:-80px;--dl:.7s;width:4.2%;--rot:14deg"></div>
-      <div class="shape star pk" style="left:59.6%;top:14.4%;--sx:-60px;--sy:120px;--dl:.6s;width:2%"></div>
+      <div class="shape star pk" style="left:56.8%;top:14.4%;--sx:-60px;--sy:120px;--dl:.6s;width:2%"></div>
       <div class="shape spark" style="left:67.6%;top:8%;--sx:-80px;--sy:140px;--dl:.8s;width:2.4%"></div>
       <div class="shape spark" style="left:16.2%;top:31%;--sx:180px;--sy:40px;--dl:.85s"></div>
       <div class="shape spark" style="left:17%;top:46%;--sx:180px;--sy:-20px;--dl:.9s;width:1.8%"></div>
