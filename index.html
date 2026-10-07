@@ -299,7 +299,7 @@ body.intro-lock{overflow:hidden}
 @keyframes fly{to{opacity:1;transform:translate(0,0) scale(1) rotate(var(--rot,0deg))}}
 .torus{width:10.8%;aspect-ratio:1;border-radius:50%;left:60.5%;top:12%;
   background:radial-gradient(circle,transparent 36%,rgba(120,170,255,.6) 38%,rgba(235,245,255,1) 46%,rgba(110,160,255,.9) 56%,rgba(60,110,240,.7) 64%,transparent 67%);filter:drop-shadow(0 0 14px rgba(80,140,255,.7)) drop-shadow(0 12px 16px rgba(40,60,140,.25))}
-.caps{width:6.4%;aspect-ratio:1/2.3;left:29%;top:8%;border-radius:999px;background:linear-gradient(90deg,#ffb35c,#ff7a1a 45%,#ffd49a 70%,#ff8a2a);filter:drop-shadow(0 10px 14px rgba(255,120,30,.4))}
+.caps{width:4.8%;aspect-ratio:1/2.3;left:30%;top:10%;border-radius:999px;background:linear-gradient(90deg,#ffb35c,#ff7a1a 45%,#ffd49a 70%,#ff8a2a);filter:drop-shadow(0 10px 14px rgba(255,120,30,.4))}
 .ball{width:3.2%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 8%,var(--c) 40%,var(--c2) 100%);filter:drop-shadow(0 8px 10px rgba(110,30,80,.18))}
 .ball.soft{opacity:.85;filter:blur(.5px)}
 .cross{width:4.6%;aspect-ratio:1;left:60.6%;top:54%}
@@ -319,7 +319,7 @@ body.intro-lock{overflow:hidden}
 .word{isolation:isolate;pointer-events:none;position:absolute;left:50%;top:43%;translate:-50% -50%;display:flex;font:700 10.6cqw/1 "Fredoka","Archivo",sans-serif;letter-spacing:.005em;filter:drop-shadow(0 0 22px rgba(255,90,150,.35))}
 .word span{position:relative;display:inline-block;opacity:0;transform:translateY(60%) scale(.2) rotate(var(--rr,0deg));margin:0 -.01em;
   --f:linear-gradient(180deg,#ffffff 0%,#fff1f5 30%,#ffc7d7 62%,#f58fae 100%);--x1:#f07ea0;--x2:#e0648b;--x3:#c94a74;
-  color:var(--x1);text-shadow:0 1px 0 var(--x1),0 2px 0 var(--x1),0 3px 0 var(--x2),0 4px 0 var(--x2),0 5px 0 var(--x2),0 6px 0 var(--x3),0 7px 0 var(--x3),0 8px 0 var(--x3),0 9px 0 var(--x3),0 22px 26px rgba(150,30,70,.35)}
+  color:var(--x1);text-shadow:0 min(1px,0.0067em) 0 var(--x1),0 min(2px,0.0134em) 0 var(--x1),0 min(3px,0.0201em) 0 var(--x2),0 min(4px,0.0268em) 0 var(--x2),0 min(5px,0.0335em) 0 var(--x2),0 min(6px,0.0402em) 0 var(--x3),0 min(7px,0.0469em) 0 var(--x3),0 min(8px,0.0536em) 0 var(--x3),0 min(9px,0.0603em) 0 var(--x3),0 min(22px,.147em) min(26px,.173em) rgba(150,30,70,.35)}
 .word span::before{content:attr(data-ch);position:absolute;left:0;top:0;color:transparent;text-shadow:none;background:var(--f);-webkit-background-clip:text;background-clip:text}
 .word span::after{content:attr(data-ch);position:absolute;left:0;top:0;color:transparent;text-shadow:none;background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.5) 24%,rgba(255,255,255,0) 44%);-webkit-background-clip:text;background-clip:text;pointer-events:none}
 .word span.pk{--f:linear-gradient(180deg,#ffd9e4 0%,#ff9dbb 35%,#e8457a 75%,#c42358 100%);--x1:#b81f50;--x2:#9c1742;--x3:#7f1036}
@@ -755,6 +755,11 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
 /* cover app icons: lighter shadow */
 .prop.tile{filter:none!important;box-shadow:0 8px 16px -8px rgba(110,30,80,.28)!important}
 .prop.tile:has(img[src*="i13"]){border-radius:50%;background:none}
+
+/* let the gloss fill reach the tail of p (descender) */
+.word span{--fe:#f58fae}.word span.pk{--fe:#c42358}.word span.og{--fe:#f07a22}
+.word span::before{padding-bottom:.3em;background:var(--f) 0 0/100% calc(100% - .3em) no-repeat,var(--fe)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.word span::after{padding-bottom:.3em;background-size:100% calc(100% - .3em)!important;background-repeat:no-repeat!important}
 </style>
 
 <div id="intro" aria-label="开场">
@@ -764,8 +769,8 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
     <div class="desk"></div>
     <div class="orbit" aria-hidden="true"></div>
     <div class="prop ptoon" aria-hidden="true"><img src="img/i17.png" alt=""></div>
-    <div class="prop tile" style="left:18.8%;top:19.5%;--r:-8deg;--d:-.5s"><img src="img/i12.webp" alt="Illustrator"></div>
-    <div class="prop tile" style="left:21.6%;top:38.5%;--r:6deg;--d:-1.5s;width:7%"><img src="img/i11.webp" alt="Photoshop"></div>
+    <div class="prop tile" style="left:17.8%;top:19.5%;--r:-8deg;--d:-.5s"><img src="img/i12.webp" alt="Illustrator"></div>
+    <div class="prop tile" style="left:20.6%;top:38.5%;--r:6deg;--d:-1.5s;width:7%"><img src="img/i11.webp" alt="Photoshop"></div>
     <div class="prop tile" style="left:73.2%;top:20.5%;--r:6deg;--d:-2.2s"><img src="img/i13.webp" alt="Canva"></div>
     <div class="prop tile" style="left:83.6%;top:35.5%;--r:-8deg;--d:-.9s"><img src="img/i15.webp" alt="剪映"></div>
     <div class="laptop"><div class="lscreen"><div class="disp"><div class="paper"><b>ABOUT ME</b></div><button class="play" id="play" aria-label="播放开场"></button></div></div><div class="lbase"><i class="kb"></i><i class="tp"></i></div><div class="lshadow"></div></div>
