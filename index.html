@@ -701,6 +701,52 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
 .vlinks a:hover{background:var(--rose);color:#fff;transform:translateY(-2px)}
 
 .g.gfix{grid-template-columns:repeat(auto-fill,var(--w))!important}
+
+/* phone: compact modal header so there is more room to scroll */
+@media (max-width:760px){
+  .scrim{padding:8px!important}
+  .modal{max-height:calc(100vh - 16px)!important;max-height:calc(100dvh - 16px)!important;border-radius:16px!important}
+  .mh{padding:12px 14px 10px!important}
+  .mh-dots,.bignum,.mh p,.mf{display:none!important}
+  .mh .k{font-size:9px!important;padding-right:44px}
+  .mh h2{font-size:20px!important;margin:5px 0 0!important;padding-right:44px}
+  .jump{flex-wrap:nowrap!important;overflow-x:auto;margin:10px -14px 0!important;padding:0 14px 2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .jump::-webkit-scrollbar{display:none}
+  .jump button{flex:none;padding:7px 12px!important;font-size:12px!important}
+  .x{top:10px!important;right:10px!important;width:34px!important;height:34px!important}
+  .mb{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .ph-scr{overflow:hidden!important;cursor:zoom-in}
+  .ph-hint{display:none}
+}
+
+/* software skills: one even row on phones; Canva icon round so no square shadow */
+@media (max-width:760px){
+  .w-soft .ic img[src*="i13"]{border-radius:50%!important}
+  .item .l{margin-right:56px!important}
+  /* phone: every picture group is one row you swipe sideways */
+  .item .g:not(.lig){display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;gap:10px!important;padding:2px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .item .g:not(.lig)>button,.item .g:not(.lig)>figure{flex:0 0 auto;scroll-snap-align:start;margin:0}
+  .item .g:not(.lig)>button,.item .g:not(.lig)>figure>button{width:calc(200px * (var(--ar)))!important;max-width:78vw;height:auto!important;aspect-ratio:var(--ar)!important}
+  .item .g:not(.lig) button:hover{transform:none!important}
+  .srow{overscroll-behavior-x:contain}
+  .item .strip:not([style*="--h:90px"]){--h:200px!important}
+  .item ul.urls li::before{top:8px!important}
+  .item ul.urls li:not(:last-child)::after{top:14px!important}
+  .urls li,.urls a{min-width:0;font-size:10px!important;letter-spacing:-.01em;line-height:1.5!important;overflow-wrap:anywhere;word-break:break-all}
+  .w-soft .in{padding:14px 12px 18px!important;gap:14px!important}
+  .w-soft .ic{width:100%;max-width:300px!important;flex-wrap:nowrap!important;justify-content:space-between;gap:0 10px!important}
+  .w-soft .ic img{flex:0 1 48px;min-width:0;width:auto!important;height:auto!important;aspect-ratio:1;border-radius:12px!important}
+}
+
+/* sideways rows: same arrows everywhere, only when the row can scroll */
+.hs .sarr svg{display:block;pointer-events:none}
+.hs{position:relative}
+.hs .sarr{display:none!important}
+.hs.ov .sarr{display:flex!important;align-items:center;justify-content:center;padding:0!important;line-height:0;top:50%!important;translate:0 -50%;width:36px;height:36px;border-radius:50%;background:var(--ink)!important;color:#fff!important;opacity:.85;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.hs .sarr.l{left:-10px}.hs .sarr.r{right:-10px}
+.hs .sarr.off{opacity:.25!important;pointer-events:none}
+.hs .phones~.sarr,.hs .sarr{margin-top:-8px}
+@media (max-width:760px){.hs .sarr.l{left:2px}.hs .sarr.r{right:2px}.hs.ov .sarr{width:32px;height:32px;font-size:20px}}
 </style>
 
 <div id="intro" aria-label="开场">
@@ -832,7 +878,7 @@ const DATA=[
    urls:[wx('Gvqf8SjyJghD6tlhj5S_OQ'),wx('Cm5Wvh6p4JyXAiY_dqdUxQ'),wx('bPB4ffc36gMwRzRo5hTOFA'),wx('bxzF3mXbKOFzMnyUAHq89g'),wx('PnxTRgIpMjxSYD2ai4mZiw'),wx('r9-BSdDULZPOC0r1VS8Lhg')]},
   {l:'IP Design - AC2025 Extended Edition',h:'ip设计-AC2025延申版本',p:'根据“第六届AMSIB跨国商业模拟挑战赛”所设计的ip吉祥物',imgs:[93,94,95],ar:'1',w:150,contain:1,stk:1},
   {l:'Graphic Design',h:'平面广告设计-《节日畅享，江中护航》',p:'每个节日的美食比喻成船，由江中药丸作为舵手驾驶，寓意着它能确保人们在节日里开胃消胀、助消化。背景巧妙构想成一个胃的形状，同时也是海水的表示，在航行开路，象征着江中药丸在保护胃部健康、为人们的节日生活保驾护航。',imgs:[97,98,99],ar:'1053/1489',w:150},
-  {l:'Original Sticker Design',h:'原创表情包设计',p:'景田为命题，将“景田纯净水”拟人化，设计成表情包',imgs:[100,101],ar:'1377/830',w:220,contain:1}
+  {l:'Original Sticker Design',h:'原创表情包设计',p:'景田为命题，将“景田纯净水”拟人化，设计成表情包',imgs:[100,101],view:'strip',hh:240,na:1}
  ]},
  {k:'04 / PHOTOGRAPHY · VIDEO EDIT',t:'人像摄影 · 剪辑',s:'人像摄影 · 剪辑',d:'',items:[
   {l:'Portrait Photography',h:'人像摄影',imgs:R(103,111),view:'strip',hh:240},
@@ -887,10 +933,10 @@ function render(it,j){
   if(it.p) h+=`<p>${it.p}</p>`;
   if(it.ul) h+='<ul>'+it.ul.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
   if(it.phones) h+='<div class="phones">'+it.phones.map(([ns,c])=>`<div class="phone"><div class="ph-frame"><div class="ph-bar"><span>‹</span><span>公众号推文</span><span>···</span></div><div class="ph-scr" tabindex="0" aria-label="${c}，可上下滑动">${ns.map(n=>`<img src="${I(n)}" alt="${c}" loading="lazy">`).join('')}</div>${ns.length>1?'<span class="ph-hint">上下滑动 ↕</span>':''}</div><p>${c}</p><button class="zoom" data-gs="${ns.join(',')}" data-c="${c}">放大看 ↗</button></div>`).join('')+'</div>';
-  if(it.imgs&&it.view==='strip') h+=`<div class="strip" style="--h:${it.hh}px"><button class="sarr l" aria-label="向左">‹</button><div class="srow">`+it.imgs.map(n=>`<button data-g="${n}" data-c="${it.h}" aria-label="放大查看：${it.h}"><img src="${I(n)}" alt="${it.h}" loading="lazy"></button>`).join('')+`</div><button class="sarr r" aria-label="向右">›</button></div>`;
+  if(it.imgs&&it.view==='strip') h+=`<div class="strip" style="--h:${it.hh}px"><div class="srow">`+it.imgs.map(n=>`<button data-g="${n}" data-c="${it.h}" aria-label="放大查看：${it.h}"><img src="${I(n)}" alt="${it.h}" loading="lazy"></button>`).join('')+`</div></div>`;
   else if(it.imgs) h+=gallery(it);
   if(it.groups) h+='<ul class="links">'+it.groups.map(([g,ls])=>`<li><b>${g}</b></li>`+ls.map(([t,u])=>`<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`).join('')).join('')+'</ul>';
-  if(it.urls) h+='<ul class="links">'+it.urls.map(u=>`<li><a href="${u}" target="_blank" rel="noopener">${u}</a></li>`).join('')+'</ul>';
+  if(it.urls) h+='<ul class="links urls">'+it.urls.map(u=>`<li><a href="${u}" target="_blank" rel="noopener">${u}</a></li>`).join('')+'</ul>';
   if(it.links) h+='<div class="tags">'+it.links.map(([t,u])=>`<a href="${u}" target="_blank" rel="noopener">${t} ↗</a>`).join('')+'</div>';
   if(it.vlinks) h+='<div class="vlinks"><span>小红书作品链接</span>'+it.vlinks.map((u,k)=>`<a href="${u}" target="_blank" rel="noopener">作品 ${String(k+1).padStart(2,'0')} ↗</a>`).join('')+'</div>';
   if(it.btns) h+=it.btns.map(([t,u])=>`<a class="btn" href="${u}" target="_blank" rel="noopener">${t}</a>`).join('');
@@ -902,8 +948,8 @@ function open(i){
   const o=DATA[i]; last=document.activeElement;
   $('#bignum').textContent=String(i+1).padStart(2,'0'); $('#mk').textContent=o.k; $('#mt').textContent=o.t; $('#md').textContent=o.d; $('#md').hidden=!o.d;
   $('#jump').innerHTML=o.items.map((it,j)=>`<button data-j="${j}">${it.h.replace(/（.*）/,'')}</button>`).join('');
-  $('#mb').innerHTML=o.items.map(render).join(''); $('#mb').scrollTo({top:0,behavior:'instant'}); $('#prog').style.width='0';
-  scrim.hidden=false; $('#x').focus();
+  $('#mb').innerHTML=o.items.map(render).join(''); $('#prog').style.width='0';
+  scrim.hidden=false; hsRows($('#mb')); { const m=$('#mb'); m.style.scrollBehavior='auto'; m.scrollTop=0; requestAnimationFrame(()=>{ m.scrollTop=0; m.style.scrollBehavior=''; }); } $('#x').focus({preventScroll:true});
   const mb=$('#mb'), its=[...mb.querySelectorAll('.item')], jb=[...$('#jump').children];
   its.forEach((el,k)=>{el.style.setProperty('--d',(k*90)+'ms'); el.dataset.n=String(k+1).padStart(2,'0');});
   if(window.__io) window.__io.disconnect();
@@ -921,7 +967,15 @@ $('#jump').addEventListener('click',e=>{const b=e.target.closest('[data-j]'); if
   el.classList.add('in');
   mb.scrollTo({top:el.offsetTop-mb.offsetTop-16,behavior:'smooth'});});
 $('#mb').addEventListener('scroll',e=>{const m=e.target; $('#prog').style.width=(m.scrollTop/(m.scrollHeight-m.clientHeight||1)*100)+'%'});
-$('#mb').addEventListener('click',e=>{const a=e.target.closest('.sarr'); if(!a)return; const row=a.parentNode.querySelector('.srow'); row.scrollBy({left:(a.classList.contains('l')?-1:1)*row.clientWidth*.8})});
+$('#mb').addEventListener('click',e=>{const a=e.target.closest('.sarr'); if(!a)return; const row=a.closest('.hs').querySelector('.srow,.g,.phones'); row.scrollBy({left:(a.classList.contains('l')?-1:1)*row.clientWidth*.8,behavior:'smooth'})});
+function hsRows(root){ root.querySelectorAll('.srow,.g:not(.lig),.phones').forEach(row=>{
+  let w=row.parentNode; if(!w.classList.contains('hs')){ w=document.createElement('div'); w.className='hs'; row.parentNode.insertBefore(w,row); w.appendChild(row);
+    w.insertAdjacentHTML('afterbegin','<button class="sarr l" aria-label="向左" type="button"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'); w.insertAdjacentHTML('beforeend','<button class="sarr r" aria-label="向右" type="button"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>');
+    row.addEventListener('scroll',()=>upd(w,row),{passive:true}); row.querySelectorAll('img').forEach(i=>i.addEventListener('load',()=>upd(w,row))); }
+  upd(w,row); }); }
+function upd(w,row){ const ov=row.scrollWidth>row.clientWidth+4; w.classList.toggle('ov',ov);
+  w.querySelector('.sarr.l').classList.toggle('off',row.scrollLeft<4); w.querySelector('.sarr.r').classList.toggle('off',row.scrollLeft+row.clientWidth>=row.scrollWidth-4); }
+addEventListener('resize',()=>{ if(!scrim.hidden) hsRows($('#mb')); });
 $('#x').onclick=close; scrim.onclick=e=>{if(e.target===scrim)close()};
 
 /* lightbox */
@@ -933,6 +987,7 @@ function show(){const [n,c]=gal[gi]; lz0=(+n>=46&&+n<=75)?.6:.8; lz=lz0; const n
 function openLB(list,i){gal=list;gi=i;$('#lbp').hidden=$('#lbn').hidden=list.length<2;show();lb.hidden=false;$('#lbx').focus()}
 function step(d){gi=(gi+d+gal.length)%gal.length;show()}
 document.addEventListener('click',e=>{
+  const ps=e.target.closest('.ph-scr'); if(ps&&matchMedia('(max-width:760px)').matches){ const z=ps.closest('.phone').querySelector('[data-gs]'); if(z){z.click();return;} }
   const b=e.target.closest('[data-g],[data-gs]'); if(!b)return;
   if(b.closest('.phone')){openLB([[b.dataset.gs,b.dataset.c]],0); return;}
   const sib=[...b.parentNode.querySelectorAll('[data-g]')].filter(x=>!x.hidden);
