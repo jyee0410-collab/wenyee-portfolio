@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>谢雯怡 Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@600;700&family=Archivo:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Zhi+Mang+Xing&family=Permanent+Marker&display=swap">
@@ -335,10 +340,9 @@ body.intro-lock{overflow:hidden}
 .ihint{position:absolute;left:50%;bottom:6%;translate:-50% 0;font:700 13px/1 var(--cn);color:var(--ink2);transition:opacity .3s}
 #intro.on .ihint{opacity:0}
 @media (max-width:760px){
-  #scene{position:relative;left:auto;top:auto;translate:none;width:150vw;margin-inline:-25vw}
-  .ptoon,.planet,.wall::before,.wall::after{display:none}
-  .orbit{left:14%;width:72%}
-  .tag{top:72%}
+  #scene{position:relative;left:auto;top:auto;translate:none;width:100vw;margin:0 0 70px}
+  .wall::before,.wall::after{display:none}
+  .tag{top:74%}
 }
 @media (prefers-reduced-motion:reduce){#intro.zoom #scene{transform:none}}
 
@@ -747,6 +751,10 @@ html,body,.hello,.w-tags,.w-soft,.w-me,.win,.cat,.mebub{transition:background-co
 .hs .sarr.off{opacity:.25!important;pointer-events:none}
 .hs .phones~.sarr,.hs .sarr{margin-top:-8px}
 @media (max-width:760px){.hs .sarr.l{left:2px}.hs .sarr.r{right:2px}.hs.ov .sarr{width:32px;height:32px;font-size:20px}}
+
+/* cover app icons: lighter shadow */
+.prop.tile{filter:none!important;box-shadow:0 8px 16px -8px rgba(110,30,80,.28)!important}
+.prop.tile:has(img[src*="i13"]){border-radius:50%;background:none}
 </style>
 
 <div id="intro" aria-label="开场">
@@ -1139,3 +1147,5 @@ else ring.hidden=true;
   function fit(){ const w=innerWidth; if(w>760&&w<1200) hin.style.setProperty('--hz',((w-32)/1180).toFixed(3)); else hin.style.removeProperty('--hz'); }
   addEventListener('resize',fit); fit(); })();
 </script>
+
+</html>
